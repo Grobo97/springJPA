@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "35013394-b5af-4434-89a1-3fbf8e84c7dc",
+		"name": "Sieci",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get appusers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findDepartmentManagedByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department/find?firstName=Dawid&lastName=Groberski",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"find"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Dawid"
+						},
+						{
+							"key": "lastName",
+							"value": "Groberski"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findDepartmentWithMaxNumberOfEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department/findByMaxEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"findByMaxEmployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findDepartmentWithMaxUsersSalary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department/findByMaxSalary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"findByMaxSalary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appuser/find?firstName=Dawid&lastName=Groberski&departmentName=Finanse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appuser",
+						"find"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Dawid"
+						},
+						{
+							"key": "lastName",
+							"value": "Groberski"
+						},
+						{
+							"key": "departmentName",
+							"value": "Finanse"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByDepartment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appuser/findByDepartment?departmentName=Finanse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appuser",
+						"findByDepartment"
+					],
+					"query": [
+						{
+							"key": "departmentName",
+							"value": "Finanse"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUsersWithPaymentIsHigher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appuser/findUsersWithPaymentIsHigher?payment=500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appuser",
+						"findUsersWithPaymentIsHigher"
+					],
+					"query": [
+						{
+							"key": "payment",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
