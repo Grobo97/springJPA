@@ -15,18 +15,18 @@ public class AppUserService {
     }
 
     public List<AppUser> findAllUsers() {
-        return appUserRepository.findAllUsers();
+        return appUserRepository.findAll();
     }
 
     public AppUser findUser(String firstName, String lastName, String departmentName) {
-        return appUserRepository.findUser(firstName, lastName, departmentName);
+        return appUserRepository.findAllByFirstNameAndLastNameAndDepartmentName(firstName, lastName, departmentName);
     }
 
     public List<AppUser> findUsersFromDepartment(String departmentName) {
-        return appUserRepository.findUsersFromDepartment(departmentName);
+        return appUserRepository.findByDepartmentName(departmentName);
     }
 
     public List<AppUser> findUsersWithPaymentIsHigher(float payment) {
-        return appUserRepository.findUsersWithPaymentIsHigher(payment);
+        return appUserRepository.findByPaymentGreaterThan(payment);
     }
 }

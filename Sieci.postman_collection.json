@@ -124,7 +124,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/appuser/find?firstName=Dawid&lastName=Groberski&departmentName=Finanse",
+					"raw": "http://localhost:8080/api/appuser/find?firstName=Dawid&lastName=Groberski&departmentName=IT",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -146,7 +146,7 @@
 						},
 						{
 							"key": "departmentName",
-							"value": "Finanse"
+							"value": "IT"
 						}
 					]
 				}
@@ -186,7 +186,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/appuser/findUsersWithPaymentIsHigher?payment=500",
+					"raw": "http://localhost:8080/api/appuser/findUsersWithPaymentIsHigher?payment=3000",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -200,7 +200,7 @@
 					"query": [
 						{
 							"key": "payment",
-							"value": "500"
+							"value": "3000"
 						}
 					]
 				}

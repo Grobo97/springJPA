@@ -15,15 +15,15 @@ public class DepartmentService {
     }
 
     public List<Department> findAllDepartments(){
-        return departmentRepository.findAllDepartments();
+        return departmentRepository.findAll();
     };
     public Department findDepartmentManagedByUser(String firstName, String lastName){
-        return departmentRepository.findDepartmentManagedByUser(firstName, lastName);
+        return departmentRepository.findByManager_FirstNameAndManager_LastName(firstName, lastName);
     };
     public Department findDepartmentWithMaxNumberOfEmployees(){
-        return departmentRepository.findDepartmentWithMaxNumberOfEmployees();
+        return departmentRepository.findFirstByOrderByUsersDesc();
     };
     public Department findDepartmentWithMaxUsersSalary(){
-        return departmentRepository.findDepartmentWithMaxUsersSalary();
+        return departmentRepository.findFirstByOrderByDepartmentCostDesc();
     };
 }
