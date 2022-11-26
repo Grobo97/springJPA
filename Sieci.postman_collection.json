@@ -206,6 +206,153 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Create Department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"test\" ,\r\n    \"address\" : \"test\",\r\n    \"phone\" : \"test\",\r\n    \"mail\" : \"test\",\r\n    \"WWW\" : \"test\",\r\n    \"description\" : \"test\" ,\r\n    \"manager\": null,\r\n    \"users\": null,\r\n    \"departmentCost\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/department/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"test4\" ,\r\n    \"address\" : \"test\",\r\n    \"phone\" : \"test\",\r\n    \"mail\" : \"test\",\r\n    \"WWW\" : \"test\",\r\n    \"description\" : \"test\" ,\r\n    \"manager\": null,\r\n    \"users\": null,\r\n    \"departmentCost\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/department/update?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get department year salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department/getDepartmentYearSalary?departmentName=IT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"getDepartmentYearSalary"
+					],
+					"query": [
+						{
+							"key": "departmentName",
+							"value": "IT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get company tax rate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/department/getCompanyTax?taxRate=19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"department",
+						"getCompanyTax"
+					],
+					"query": [
+						{
+							"key": "taxRate",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user yearly salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appuser/getUserYearlySalary?lastName=Groberski",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appuser",
+						"getUserYearlySalary"
+					],
+					"query": [
+						{
+							"key": "lastName",
+							"value": "Groberski"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
