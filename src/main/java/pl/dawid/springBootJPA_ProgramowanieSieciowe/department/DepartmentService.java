@@ -24,6 +24,32 @@ public class DepartmentService {
         return departmentRepository.findFirstByOrderByUsersDesc();
     };
     public Department findDepartmentWithMaxUsersSalary(){
-        return departmentRepository.findFirstByOrderByDepartmentCostDesc();
+        List<Department> departments = departmentRepository.findAll();
+        float maxCost = 0f;
+        Department depMax = null;
+        for (Department dep : departments){
+            if (dep.getDepartmentCost() > maxCost){
+                maxCost = dep.getDepartmentCost();
+                depMax = dep;
+            }
+        }
+        return depMax;
     };
+    public DepartmentDTO createOrUpdateDepartment(DepartmentDTO departmentDTO){
+        Department department = departmentRepository.save(departmentDTO.toEntity());
+        return departmentDTO.buildDTO(department);
+    }
+
+    public float getCompanyTax(float taxRate){
+        List<Department> departments = departmentRepository.findAll();
+        float maxCost = 0f;
+        for (Department dep : departments){
+                maxCost += dep.getDepartmentCost();
+        }
+        return maxCost*taxRate/100;
+    };
+
+    public float getDepartmentYearSalary(String name) {
+        return departmentRepository.findFirstByName(name).getDepartmentCost()*12;
+    }
 }

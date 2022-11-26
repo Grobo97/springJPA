@@ -123,9 +123,6 @@ public class DBConfig {
             it.setUsers(List.of(dawid,maniel));
             produkcja.setUsers(List.of(kaniel));
             departmentRepository.saveAll(List.of(finanse,it,produkcja));
-            finanse.setDepartmentCost();
-            it.setDepartmentCost();
-            produkcja.setDepartmentCost();
             appUserRepository.saveAll(List.of(dawid,daniel,maniel,kaniel,taniel,financeTest1));
         };
 

@@ -2,7 +2,6 @@ package pl.dawid.springBootJPA_ProgramowanieSieciowe.department;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,8 +14,5 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
     Department findByManager_FirstNameAndManager_LastName(String firstName, String lastName);
 
     Department findFirstByOrderByUsersDesc();
-
-
-    Department findFirstByOrderByDepartmentCostDesc();
-
+    Department findFirstByName(String name);
 }

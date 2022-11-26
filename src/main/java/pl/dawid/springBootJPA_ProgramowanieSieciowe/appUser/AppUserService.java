@@ -29,4 +29,16 @@ public class AppUserService {
     public List<AppUser> findUsersWithPaymentIsHigher(float payment) {
         return appUserRepository.findByPaymentGreaterThan(payment);
     }
+
+    public AppUserDTO createOrUpdateUser(AppUserDTO appUserDTO) {
+        AppUser appUser = appUserRepository.save(appUserDTO.toEntity());
+        return appUserDTO.buildDTO(appUser);
+    }
+
+
+    public float getUserYearlySalary(String lastName) {
+        AppUser appUser = appUserRepository.findFirstByLastName(lastName);
+        float monthlySalary = appUser.getPayment() + appUser.getBonus();
+        return monthlySalary * 12;
+    }
 }

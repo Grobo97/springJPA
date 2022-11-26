@@ -32,14 +32,17 @@ public class Department {
     @OneToMany(targetEntity = AppUser.class, mappedBy = "department")
     @JsonManagedReference
     private List<AppUser> users;
-
+    @Transient
     private float departmentCost;
 
-    public void setDepartmentCost(){
-        this.departmentCost = 0f;
+
+
+    public float getDepartmentCost(){
+        float depCost = 0f;
         for(AppUser appUser : users){
-            this.departmentCost = this.departmentCost + appUser.getPayment() + appUser.getBonus();
+            depCost += this.departmentCost + appUser.getPayment() + appUser.getBonus();
         }
+        return depCost;
     }
 
 }

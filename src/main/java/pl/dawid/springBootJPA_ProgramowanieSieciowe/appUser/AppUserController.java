@@ -37,4 +37,20 @@ public class AppUserController {
         return appUserService.findUsersWithPaymentIsHigher(payment);
     }
 
+    @GetMapping("/getUserYearlySalary")
+    public float getUserYearlySalary(@RequestParam(value="lastName") String lastName){
+        return appUserService.getUserYearlySalary(lastName);
+    }
+
+    @PostMapping
+    public AppUserDTO addUser(@RequestBody AppUserDTO appUserDTO){
+        return appUserService.createOrUpdateUser(appUserDTO);
+    }
+
+    @PostMapping("/update")
+    public AppUserDTO updateUser(@RequestParam(name="id") Long id, @RequestBody AppUserDTO appUserDTO){
+        appUserDTO.setId(id);
+        return appUserService.createOrUpdateUser(appUserDTO);
+    }
+
 }

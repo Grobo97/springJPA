@@ -1,10 +1,7 @@
 package pl.dawid.springBootJPA_ProgramowanieSieciowe.department;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,4 +31,26 @@ public class DepartmentController {
     public Department findDepartmentWithMaxUsersSalary(){
         return departmentService.findDepartmentWithMaxUsersSalary();
     };
+
+    @GetMapping("/getDepartmentYearSalary")
+    public float getDepartmentYearSalary(@RequestParam(value = "departmentName") String departmentName){
+        return departmentService.getDepartmentYearSalary(departmentName);
+    };
+
+    @GetMapping("/getCompanyTax")
+    public float getCompanyTax(@RequestParam(value= "taxRate") float taxRate){
+        return departmentService.getCompanyTax(taxRate);
+    }
+
+    @PostMapping
+    public DepartmentDTO addDepartment(@RequestBody DepartmentDTO departmentDTO){
+        return departmentService.createOrUpdateDepartment(departmentDTO);
+    }
+
+    @PostMapping("/update")
+    public DepartmentDTO updateDepartment(@RequestParam(name="id") Long id, @RequestBody DepartmentDTO departmentDTO){
+        departmentDTO.setId(id);
+        return departmentService.createOrUpdateDepartment(departmentDTO);
+    }
+
 }
